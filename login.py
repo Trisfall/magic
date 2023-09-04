@@ -3,7 +3,7 @@ import streamlit as st
 
 def check_login():
     if 'login' in st.session_state:
-        if st.session_state['login'] in ['LJWYX2', 'visitante', '1']:
+        if st.session_state['login'] in ['LJWYX2', 'visitante']:
             return True
         else:
             st.error('Login Incorreto.')
