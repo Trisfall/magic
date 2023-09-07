@@ -20,7 +20,8 @@ def tab_rank(jogos: ListJogos):
 
     lista = []
     for key, valor in final.items():
-        lista.append(Rank(jogador=key, tops=valor))
+        if key != '[REDACTED] [REDACTED]':
+            lista.append(Rank(jogador=key, tops=valor))
 
     lista.sort(key=lambda x: x.tops, reverse=True)
 
