@@ -86,7 +86,7 @@ def tab_inserir(jogos: ListJogos):
         hoje = str(date.today()).split('-')
         hoje.reverse()
         st.text_input(key='input_data', label='Data do Torneio', value='/'.join(hoje))
-        st.selectbox(key='input_tipo', label='Torneio', options=('Modern', 'T2', 'Pionner', 'Pauper'))
+        st.selectbox(key='input_tipo', label='Torneio', options=('Modern', 'T2', 'Pionner', 'Pauper', 'Selado'))
         st.text_area(key='input_torneio', label='Inserir Novo Torneio')
         if st.button('salvar'):
             texto = st.session_state['input_torneio'].strip()
