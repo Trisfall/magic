@@ -50,7 +50,8 @@ def gravar_torneio(texto: str, data: str, tipo: str):
                               pontos=int(lista[2]),
                               vpg=int(lista[3]),
                               vj=int(lista[4]),
-                              vjg=int(lista[5]))
+                              vjg=int(lista[5]),
+                              tamanho=len(dados))
         else:
             lista = dado.split(' ')
             novo = JogoCreate(data=data,
@@ -60,7 +61,8 @@ def gravar_torneio(texto: str, data: str, tipo: str):
                               pontos=0,
                               vpg=0,
                               vj=0,
-                              vjg=0)
+                              vjg=0,
+                              tamanho=len(dados))
         inserir_jogo(novo)
 
 
