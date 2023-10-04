@@ -11,6 +11,7 @@ class Jogo(BaseModel):
     vpg: int
     vj: int
     vjg: int
+    tamanho: int
 
 
 class JogoCreate(BaseModel):
@@ -22,6 +23,7 @@ class JogoCreate(BaseModel):
     vpg: int
     vj: int
     vjg: int
+    tamanho: int
 
 
 class ListJogos(BaseModel):

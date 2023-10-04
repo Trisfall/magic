@@ -150,7 +150,7 @@ tj/streamlit/saved_user.txt
 tj/download/screenshot.png
 tj/data/precatorios/ListaPrecatorioPendente_538543.pdf
 tj/__pycache__/configs.cpython-310.pyc
-aaa/secrets.toml
+.streamlit/secrets.toml
 .idea/misc.xml
 .idea/rpa-hurst.iml
 tj/apis/__init__.py

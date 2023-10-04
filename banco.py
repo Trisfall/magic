@@ -14,7 +14,8 @@ def create_table():
             pontos INTEGER NOT NULL,
             vpg INTEGER NOT NULL,
             vj INTEGER NOT NULL,
-            vjg INTEGER NOT NULL
+            vjg INTEGER NOT NULL,
+            tamanho TEXT NOT NULL
         )
         """)
 
@@ -30,8 +31,10 @@ def inserir_jogo(jogo: JogoCreate):
         campos.append('vpg')
         campos.append('vj')
         campos.append('vjg')
+        campos.append('tamanho')
         command = f'INSERT INTO resultado ({",".join(campos)}) VALUES ({ ",".join(["?"]*len(campos)) })'
-        variables = (jogo.data, jogo.tipo, jogo.jogador, jogo.posicao, jogo.pontos, jogo.vpg, jogo.vj, jogo.vjg)
+        variables = (jogo.data, jogo.tipo, jogo.jogador, jogo.posicao,
+                     jogo.pontos, jogo.vpg, jogo.vj, jogo.vjg, jogo.tamanho)
         db.cursor().execute(command, variables)
         db.commit()
 
@@ -56,5 +59,6 @@ def get_all_jogos():
                                pontos=elemento[5],
                                vpg=elemento[6],
                                vj=elemento[7],
-                               vjg=elemento[8]))
+                               vjg=elemento[8],
+                               tamanho=elemento[9]))
         return ListJogos(lista=result)

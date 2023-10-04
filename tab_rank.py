@@ -4,11 +4,15 @@ from jogo import ListJogos, Rank
 
 
 def tab_rank(jogos: ListJogos):
+    quantidade_torneios = (i+1 for i in range(32))
     opcoes = ('Todos', 'Modern', 'T2', 'Pionner')
     corte = st.selectbox(key='input_top', label='Selecione o corte (Ex. Top 4):', options=(4, 2, 8, 16, 32))
+    tamanho = st.selectbox(key='input_qtd', label='Selecione a quantidade de jogadores', options=quantidade_torneios)
     tipo = st.selectbox(key='input_modalidade', label='Selecione o formato:', options=opcoes)
 
-    dados = [item for item in jogos.lista if item.posicao <= corte and (tipo == 'Todos' or tipo == item.tipo)]
+    dados = [item for item in jogos.lista if item.posicao <= corte
+                                            and (tipo == 'Todos' or tipo == item.tipo)
+                                            and item.tamanho <= tamanho]
 
     final = {}
 

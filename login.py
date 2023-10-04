@@ -3,7 +3,9 @@ import streamlit as st
 
 def check_login():
     if 'login' in st.session_state:
-        if st.session_state['login'] in ['LJWYX2', 'visitante', 'Rod27']:
+        vals = [item['login'] for item in st.secrets['user']]
+        vals.append('visitante')
+        if st.session_state['login'] in vals:
             return True
         else:
             st.error('Login Incorreto.')

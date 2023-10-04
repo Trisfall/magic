@@ -9,6 +9,7 @@ if check_login():
     st.set_page_config(layout="wide", page_title="Rank")
 
     jogos = get_all_jogos()
+    vals = [item['login'] for item in st.secrets['admin']]
 
     if st.session_state['login'] == 'visitante':
         tabs = st.tabs(
@@ -17,7 +18,7 @@ if check_login():
             tab_rank(jogos)
         with tabs[1]:
             tab_torneio(jogos)
-    elif st.session_state['login'] == 'Rod27':
+    elif st.session_state['login'] in vals:
         tabs = st.tabs(
             ['Inserir Novo Torneio', 'Rank', 'Torneios', 'Download'])
         with tabs[0]:
